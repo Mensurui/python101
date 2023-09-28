@@ -1,5 +1,7 @@
 list1 = [1, 2, 3, 4, 5, 6]
 
+list1[1] = 7
+
 # to add 
 list1.insert(0,7)
 print (list1)
@@ -17,6 +19,8 @@ print(list1)
 del list1[0]
 print (list1)
 
+print("hello world")
+print (list1[1])
 #iterate over a list
 for x in list1:
     print ("Value: ", x)
