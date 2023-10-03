@@ -62,3 +62,23 @@ set_a = {x for x in range(10,20) if x not in [12,14,16]}
 print(set_a)
 
 
+a=[[96], [69]]
+print(''.join(list(map(str, a))))
+
+z = ["alpha", "bravo", "charlie"]
+new_z = [i[0]*2 for i in z]
+print(new_z)
+
+def sum(n):
+    if n == 1:
+        return 0
+    print (n)
+    return n + sum(n-1)
+
+a = sum(5)
+print(a)
+
+some = ["aaa", "bbbb"]
+
+def aa ():
+    return "aaa"
