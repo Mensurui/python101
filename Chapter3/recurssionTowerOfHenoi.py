@@ -19,4 +19,4 @@ Helper: B
 Destination: C
 '''
 # Actual function call
-hanoi(disks, 'A', 'B', 'C')
+hanoi(disks, 'Source', 'Helper', 'Destination')
