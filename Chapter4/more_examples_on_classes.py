@@ -32,4 +32,3 @@ number_of_rooms = str(obj_home.numOfRooms)
 print ("Number of rooms include: " +"" + number_of_rooms)
 price = str(obj_home.cost_of_evaluation(100))
 print("With the current rate the price is up to: " + price +"$")
-
