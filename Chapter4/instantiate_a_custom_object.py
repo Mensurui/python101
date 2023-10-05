@@ -8,5 +8,7 @@ class MyFirstClass:
 
 
 whodunnit = MyFirstClass()
-whodunnit.hand_list("Plato", "The Republic")
+authors_name = input("Write the name of the author: ")
+name_of_the_book = input("Write the name of the book: ")
+whodunnit.hand_list(authors_name, name_of_the_book)
 
