@@ -11,6 +11,7 @@ class Alpha:
     #def set_b(self, value):
         #self.__b = value
 
+#You can be able to access it by some twitching
 obj = Alpha()
 valueA = obj._a
 
