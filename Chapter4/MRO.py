@@ -3,7 +3,9 @@ class A:
 
 class B(A):
     num = 9
+    
 class C(B):
     pass
 
 print(C.mro())
+print(help(C))
