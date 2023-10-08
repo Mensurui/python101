@@ -2,8 +2,17 @@
 #or
 #from math import sqrt 
 #or
-import math as m 
+#import math as m
+#or 
+#from math import factorial, log10, cosh, sqrt
+#or
+from math import *
 
-cosine = m.cos(0)
-result = m.sqrt(25)
+
+factorial = factorial(5)
+log_base_10 = log10(50)
+cosine = cosh(0)
+result = sqrt(25)
 print(result + cosine)
+print(factorial)
+print(log_base_10)
