@@ -26,3 +26,8 @@ class B:
 print("Instantiating B..")
 b = B(a)
 print(a)
+
+name = "mensur"
+reverse = name[::-1]
+print(name)
+print(reverse)

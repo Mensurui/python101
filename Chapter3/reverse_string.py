@@ -13,9 +13,11 @@ def string_reverse(str):
     if len(str) == 0 :
         return str
     else:
+        print(str)
         return string_reverse(str[1:]) + str[0]
 
     
 str ="Mensur"
 reverse = string_reverse(str)
 print(reverse)
+
