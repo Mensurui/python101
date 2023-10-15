@@ -21,7 +21,7 @@ def caesar_decipher(text, shift):
     return caesar_cipher(text, -shift)
 
 # Example usage
-plaintext = "Mensur Khalid"
+plaintext = input("Enter the plaintext that you wish to encrypt: ")
 shift_value = 3
 
 encrypted_text = caesar_cipher(plaintext, shift_value)
