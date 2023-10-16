@@ -1,4 +1,4 @@
-# Start from Monday and go through to the 7 days of the week
+# Start from Monday and go through the 7 days of the week
 days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 def date():
@@ -19,8 +19,15 @@ def date():
     print(f"Total mornings at the gym: {Mornings} days")
     print(f"Total nights reading books: {Nights} days")
 
+    print("\nYour Weekly Routine:")
+    for i in range(7):
+        gym_indicator = "X" if i < Mornings else " "
+        books_indicator = "X" if i < Nights else " "
+        print(f"{days[i]}: Gym [{gym_indicator}] Books [{books_indicator}]")
+
+    print("\nMotivational Feedback:")
     if Mornings > 3 and Nights > 3:
-        print("You are on the right path to a healthy and knowledgeable life!")
+        print("Congratulations! You're on a fantastic path to a healthy and knowledgeable life.")
     elif Mornings < 3 and Nights > 3:
         print("Reading books is great, but consider adding some physical activity to your routine.")
     elif Mornings > 3 and Nights < 3:
