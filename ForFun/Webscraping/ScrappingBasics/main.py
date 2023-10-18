@@ -9,9 +9,9 @@ with open('home.html', 'r') as html_file:
     
     for card in course_cards:
         course_name = card.h5.text
-        course_price = card.a.text
+        course_price = card.a.text.split()[-1]
         
-        print(course_name + ' ' + course_price)
+        print(f'{course_name} costs {course_price}')
         
     #courses_html_tags = soup.find_all('h5')
     
