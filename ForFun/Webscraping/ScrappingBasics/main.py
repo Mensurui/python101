@@ -5,12 +5,17 @@ with open('home.html', 'r') as html_file:
     
     soup = BeautifulSoup(content, 'lxml')
     
-    courses_html_tags = soup.find_all('h5')
+    course_cards = soup.find_all('div', class_= 'card')
     
-    for course in courses_html_tags:
-        print(course.text)
+    for card in course_cards:
+        print(card.a.text)
     
-    prices_html_tags = soup.find_all('a')
+    #courses_html_tags = soup.find_all('h5')
     
-    for price in prices_html_tags:
-        print(price.text)
+    #for course in courses_html_tags:
+     #   print(course.text)
+    
+    #prices_html_tags = soup.find_all('a')
+    
+    #for price in prices_html_tags:
+     #   print(price.text)
