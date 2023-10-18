@@ -8,8 +8,11 @@ with open('home.html', 'r') as html_file:
     course_cards = soup.find_all('div', class_= 'card')
     
     for card in course_cards:
-        print(card.a.text)
-    
+        course_name = card.h5.text
+        course_price = card.a.text
+        
+        print(course_name + ' ' + course_price)
+        
     #courses_html_tags = soup.find_all('h5')
     
     #for course in courses_html_tags:
