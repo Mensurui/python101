@@ -33,28 +33,29 @@ print("What type of fuel do you want?")
 type_of_fuel = input(">")
 print("What year of production do you want?")
 year_of_production = input(">")
+print("What company production do you want?")
+company_of_production = input(">")
 
 for car_data in all_cars:
-    if 'Toyota' in car_data['Name']:
+    if company_of_production in car_data['Name']:
       if type_of_fuel and year_of_production in car_data['Plate']:
-        if 'weeks' in car_data['Posted']:
-            print('Its an old data are you sure you want to see it. Y/N')
-            weeks_old = input('>')
-            if 'Y' or 'y':
-                print(car_data['Name'])
-                print(car_data['Price'])
-                print(car_data['Posted'])
-                print(car_data['Plate'])
-                print(car_data['More Info'])
-                print('_______________________________')
-            else:
-                print("Thats what I thought.")
-        else:
-                print(car_data['Name'])
-                print(car_data['Price'])
-                print(car_data['Posted'])
-                print(car_data['Plate'])
-                print(car_data['More Info'])
-                print('_______________________________')
-    
+          if 'weeks' not in car_data['Posted']:
+            print(car_data['Name'])
+            print(car_data['Price'])
+            print(car_data['Posted'])
+            print(car_data['Plate'])
+            print(car_data['More Info'])
+            print('_______________________________')
+          elif 'weeks' in car_data['Posted']:
+              print("Car data outdated press Y/y to view data press N/n to leave")
+              input_agreed = input(">")
+              if input_agreed == "Y":
+                  print(car_data['Name'])
+                  print(car_data['Price'])
+                  print(car_data['Posted'])
+                  print(car_data['Plate'])
+                  print(car_data['More Info'])
+                  print('_______________________________')
+              elif input_agreed == "N":
+                  print("Thanks for your feedback.")
 
