@@ -23,14 +23,38 @@ for page_number in range(1, 4):  # You can specify the range of pages you want t
     for car in cars:
         car_name = car.find('h3').text.strip()
         car_price = car.find('div', class_='price').text.strip()
-        count += 1
-        all_cars.append({'Number':count,'Name': car_name, 'Price': car_price})
+        car_more_info = car.h3.a['href'].strip()
+        car_posted =car.find('ul', class_='list-unstyled').text.strip()
+        car_plate = car.find('p', class_='location').text.strip()
+        all_cars.append({'Name': car_name, 'Price': car_price, 'More Info': car_more_info, "Posted": car_posted, "Plate": car_plate})
 # Now, you have all the car data in the 'all_cars' list
+print("Loading car data")
+print("What type of fuel do you want?")
+type_of_fuel = input(">")
+print("What year of production do you want?")
+year_of_production = input(">")
+
 for car_data in all_cars:
-    print(car_data['Number'])
-    print(car_data['Name'])
-    print(car_data['Price'])
-    print('_______________________________')
+    if 'Toyota' in car_data['Name']:
+      if type_of_fuel and year_of_production in car_data['Plate']:
+        if 'weeks' in car_data['Posted']:
+            print('Its an old data are you sure you want to see it. Y/N')
+            weeks_old = input('>')
+            if 'Y' or 'y':
+                print(car_data['Name'])
+                print(car_data['Price'])
+                print(car_data['Posted'])
+                print(car_data['Plate'])
+                print(car_data['More Info'])
+                print('_______________________________')
+            else:
+                print("Thats what I thought.")
+        else:
+                print(car_data['Name'])
+                print(car_data['Price'])
+                print(car_data['Posted'])
+                print(car_data['Plate'])
+                print(car_data['More Info'])
+                print('_______________________________')
     
 
-print(count)
