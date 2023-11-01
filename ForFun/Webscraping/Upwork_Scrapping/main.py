@@ -2,27 +2,20 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
-# Initialize a list to store all car data
 
 def find_cars():
     all_cars = []
 
-# Define the base URL
     base_url = "https://www.mekina.net/cars/?body_type=Sedan&page="
 
     count = 0
-# Loop through multiple pages
-    for page_number in range(1, 4):  # You can specify the range of pages you want to scrape
+    for page_number in range(1, 4): 
 
-    # Make a request to the website
         res = requests.get(base_url + str(page_number))
 
-    # Parse the page with BeautifulSoup
         soup = BeautifulSoup(res.text, 'lxml')
 
-    # Find all car listings on the page
         cars = soup.find_all('div', class_='category-grid-box-1')
-    # Loop through the car listings on the current page
         for car in cars:
             car_name = car.find('h3').text.strip()
             car_price = car.find('div', class_='price').text.strip()
@@ -30,7 +23,6 @@ def find_cars():
             car_posted =car.find('ul', class_='list-unstyled').text.strip()
             car_plate = car.find('p', class_='location').text.strip()
             all_cars.append({'Name': car_name, 'Price': car_price, 'More Info': car_more_info, "Posted": car_posted, "Plate": car_plate})
-# Now, you have all the car data in the 'all_cars' list
     print("Loading car data")
     print("What type of fuel do you want?")
     type_of_fuel = input(">")

@@ -21,3 +21,17 @@ str ="Mensur"
 reverse = string_reverse(str)
 print(reverse)
 
+title = 'Mensur is a funny man'
+words = title.split()
+reversed_words = ' '.join(reversed(words))
+
+print(reversed_words)
+
+'''
+To reverse words use:
+*the word*
+words = s.split()
+
+reversed_word = ' '.join(reversed(words))
+return reversed_word
+'''
